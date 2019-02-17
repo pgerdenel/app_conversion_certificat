@@ -1,0 +1,40 @@
+####################################################### A FAIRE ########################################################
+
+####################################################### CONFIGURATION ##################################################
+
+-listen on 2025
+-SingleThreadExecutor listen:
+    Gest_user 2026
+    Back_office 2027
+    Gest_port 2031(port1) --> to 20XX
+    Portail 2028
+
+JSONObject demande_certificat (exemple)
+{
+    nom_entite:"gest_port"
+    port_number: 2030
+    id_port:"1"
+}
+{
+    nom_entite:"gest_user"
+    nom_entite:"back_office"
+    nom_entite:"gest_port"
+    nom_entite:"portail"
+    port_number: 2026
+    id_port:"1"
+}
+
+####################################################### NOTES ##########################################################
+
+
+
+- Elle est écrite en Java
+- Serveur Socket UDP non connecte
+-1 Reception de la clé publique du client
+-2 Vérification de la clé publique du client
+-3 Envoie du certificat au demandeur
+
+- L'autorité de certification permet de générer des certificats pour toutes les applications Java du projet.
+
+Elle attend des requêtes sur un port UDP pour la création de certificats :
+Elle attend des requêtes sur un port UDP pour la récupération de son propre certificat : elle l'a déjà ou qui lui envoie ???
